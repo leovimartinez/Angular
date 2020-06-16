@@ -1,0 +1,55 @@
+<h1>Videos</h1>
+<input type="text" [(ngModel)]="categoria">
+<ul [ngSwitch]="categoria">
+
+    <li *ngSwitchCase="'Keto'" [ngStyle]="{
+        'background':color,
+        'color': 'green',
+        'padding': '20px'   
+        }">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/Z9SLqIDcQ2A" frameborder="5px"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <br>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/x_sy5Ky_fL4" frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <br>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/aJkGaFo9EH0" frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </li>
+
+    <li *ngSwitchCase="'Fitness'" [ngStyle]="{
+        'background':color,
+        'color': 'white',
+        'padding': '20px'   
+       }">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/lh1UszyPHfk" frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </li>
+
+    <li *ngSwitchCase="'Rutinas'" [ngStyle]="{
+        'background':color,
+        'color': 'white',
+        'padding': '20px'   
+       }">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/sifu40W5fEQ" frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <br>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/qBaC3TcKdv4" frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <br>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/I5IN_TsSLD0" frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </li>
+
+    <li *ngSwitchCase="'Dietas'" [ngStyle]="{
+        'background':color,
+        'color': 'white',
+        'padding': '20px'   
+       }">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/Mu-2AtTAjK0" frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <br>
+        
+    </li>
+
+</ul>

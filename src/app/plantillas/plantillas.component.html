@@ -1,0 +1,32 @@
+{{titulo}}
+
+<div *ngIf="administrador then admin else noAdmin"></div>
+
+<ng-template #admin>
+    <h1>Soy la template admin</h1>
+    <button (click) = "cambiarRol(false)">Actualizar</button>
+
+    <h1>Pipes</h1>
+    <h2>{{fecha|date:'dd/MM/yyyy'}}</h2>
+    <h2>{{fecha}}</h2>
+    <h1>{{nombre}}</h1>
+    <h2>{{nombre | lowercase}}</h2>
+    {{5 | conversor: 10}}
+
+
+    <div>
+            <ul class="list-group">
+                <li *ngFor="let ganancia of ganancias">
+                    <ul>
+                        <li class="list-group-item">{{ganancia| iva}}</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+</ng-template>
+
+<ng-template #noAdmin>
+    <h1>Soy la template usuario</h1>
+    <button (click) = "cambiarRol(true)">Actualizar</button>
+</ng-template>

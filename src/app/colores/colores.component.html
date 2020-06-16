@@ -1,0 +1,94 @@
+<h1>Botones</h1>
+
+<button class="btn btn-primary" (click)="evento(true)">Mostrar Información</button>
+<button class="btn btn-success" (click)="evento(false)">Ocultar Información</button>
+
+<div *ngIf="cambio == true">
+<h1>Soy la Informacion</h1>
+</div>
+
+<div *ngIf="cambio == false"></div>
+
+<hr>
+
+<h1>Iteraciones</h1>
+{{clientes[0].nombre}}
+{{clientes[1].nombre}}
+{{clientes[2].nombre}}
+
+<ul class="list-group">
+    <li *ngFor="let cliente of clientes">
+        <ul>
+            <li class="list-group-item">{{cliente.nombre}}</li>
+            <li class="list-group-item">{{cliente.edad}}</li>
+            <li class="list-group-item" *ngIf="cliente.vip == true">Es VIP</li>
+            <li class="list-group-item" *ngIf="cliente.vip == false">No es VIP</li>
+        </ul>
+    </li>
+</ul>
+
+
+
+<hr>
+
+<h1>Modelo de datos Cliente</h1>
+<ul>
+    <li>{{cliente.nombre}}</li>
+    <li>{{cliente.edad}}</li>
+    <li *ngIf="cliente.vip == true">Es VIP</li>
+    <li *ngIf="cliente.vip == false">No es VIP</li>
+</ul>
+
+<hr>
+
+{{titulo}}
+
+<input type="text" [(ngModel)]="clase_seleccionada">
+
+<pre [style.border] = "clase_seleccionada == 'red' ? '5px solid black' : '1px'"
+[ngClass]="{
+    bordeAzul: clase_seleccionada == 'azul',
+    bordeVerde: clase_seleccionada == 'verde'
+}"
+>
+
+</pre>
+
+
+<input type="text" [(ngModel)]="color_seleccionado">
+<div [ngStyle]="{
+    'background': color_seleccionado,
+    'width' : '300px',
+    'heigth' : '700px'
+}">
+Hola
+</div>
+
+<h1>Switch</h1>
+<input type="text" [(ngModel)]="color">
+<ul [ngSwitch]="color">
+
+    <li *ngSwitchCase="'red'" [ngStyle] ="{
+     'background':color,
+     'color': 'white',
+     'padding': '20px'   
+    }">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/Z9SLqIDcQ2A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </li>
+
+    <li *ngSwitchCase="'blue'" [ngStyle] ="{
+        'background':color,
+        'color': 'white',
+        'padding': '20px'   
+       }">
+           Es de color azul
+       </li>
+
+       <li *ngSwitchCase="'green'" [ngStyle] ="{
+        'background':color,
+        'color': 'white',
+        'padding': '20px'   
+       }">
+           Es de color verde
+       </li>
+</ul>
